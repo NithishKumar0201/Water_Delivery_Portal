@@ -1,0 +1,51 @@
+<%- include('../_partial/_header'); -%>
+<% if(info && info.length){%>
+    <div class="alert alert-info" type="alert">
+        <%= info%>
+    </div>
+   
+ <%}%> 
+<h1 class="container">Book your orders to quench your Thirst!!!</h1>
+
+<form action="/book" method ="POST">
+<div>
+    <label for="name">Name      :</label>
+    <input type="text" name="name" id="name" placeholder="UserName" required>
+</div>
+<div>
+    <label for="carno">Citizen ID       :</label>
+    <input type="text" name="carno"id="carno" placeholder="CitizenID" required>
+</div>
+<div>
+    <label for="mailid">Mail-Id        :</label>
+    <input type="email" name="mailid" id="mailid"placeholder="Enter the emailid ">
+</div>
+<div>
+    <label for="address">Address        :</label>
+    <input type="text" name="address" id="address"placeholder="Enter the address">
+</div>
+<div>
+    <label for="Phone">Phone No.     :</label>
+    <input type="tel" name="phone"id="phoneno" placeholder="Contact No." required>
+</div>
+<label for="service">Menu    :</label><br>
+<div class="col-sm-6">
+    <input type="checkbox" name="service" value="WaterBottles - 5 cases" id="cb1">
+    <label for="service">WaterBottles - 5 cases:</label><br>
+    <input type="checkbox" name="service" value="WaterBottles - 10 cases" id="Outer Wash">
+    <label for="Outer Wash">WaterBottles - 10 cases</label><br>
+    <input type="checkbox" name="service" value="WaterCane - 20 Litrs" id="InnerAirCleaning">
+    
+    <label for="InnerAirCleaning">WaterCane - 20 Litrs</label><br>
+    <input type="checkbox" name="service" value="Festival Water Supply" id="Paint Fill">
+    <label for="Paint Fill">Festival Water Supply</label><br>
+    
+</div><br>
+<div>
+    <button type="reset">Reset</button>
+<button type="submit">Submit</button>
+
+</div>
+</form>
+
+<%- include ('../_partial/_footer'); -%>

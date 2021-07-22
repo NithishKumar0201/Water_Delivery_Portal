@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WaterAgency</title>
+    <!-- <link rel="stylesheet" href="https://https://bootswatch.com/5/quartz/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+</head>
+ 
+<body>
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+     <div class="container">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="/">M.R.P.S WATER SUPPLIERS</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <% if(currentuser!=null){%>
+            <li><a href="/book">Book</a></li>
+            
+            <li><a href="/profile">Welcome <%= currentuser.name%></a></li>
+
+            <li><a href="/logout">LogOut</a></li>
+             
+         <%}%>   
+        
+        <% if(currentuser==null){%>
+         <li><a href="/login">Log In</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+        <%}%>   
+        </ul>
+    </div>
+</div>
+ 
+<div class="container">
+    <% if(error && error.length){%>   
+         <div class="alert alert-danger" type="alert">
+             <%= error%>
+         </div>
+    <%}%>   

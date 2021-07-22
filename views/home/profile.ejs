@@ -1,0 +1,16 @@
+<%- include('../_partial/_header'); -%>
+
+<h1>View your orders here</h1>
+<% if(currentuser!=null){%>
+    <h2>Name: <%= currentuser.name %></h2>
+    <h2>Email: <%= currentuser.email %></h2>
+    <h2> Your Orders</h2>
+    
+    <% orders.forEach(obj=>{%>
+     
+            <h3><%=obj %></h3>    
+       
+    <%})%>
+<%}%>
+
+<%- include ('../_partial/_footer'); -%>
